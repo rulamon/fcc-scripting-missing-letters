@@ -1,11 +1,12 @@
-const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+const alphabet = Array.from("abcdefghijklmnopqrstuvwxyz")
 function fearNotLetter(str) {
 	let strArr = str.split("");
-	for (let i = alphabet.indexOf(strArr[0]); i < alphabet.length; i++) {
+	let startIndex = alphabet.indexOf(strArr[0]);
+	for (let i = startIndex; i < startIndex + strArr.length; i++) {
 		if (!strArr.includes(alphabet[i])) {
 			return alphabet[i];
 		}
 	}
 }
 
-console.log(fearNotLetter("abce"));
+console.log(fearNotLetter("bcde"));
